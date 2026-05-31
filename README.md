@@ -1,4 +1,4 @@
-# RetireWell
+# Retire 360
 
 A retirement planning app for Indian retirees. Turn a lump-sum corpus into steady monthly income using the bucket strategy. Save tax, plan for 25 years.
 
@@ -70,7 +70,7 @@ npm run dev
 
 Then open **http://localhost:3100** in your browser.
 
-(RetireWell runs on port **3100** so it never clashes with your other apps like Intelligent Advisory, which uses 3000.)
+(Retire 360 runs on port **3100** so it never clashes with your other apps like Intelligent Advisory, which uses 3000.)
 
 Press `Ctrl + C` in the terminal to stop the app.
 
@@ -112,7 +112,7 @@ These plug into the same database and calculation engine — easy follow-on work
 
 ## Deploying to Vercel (shareable preview link)
 
-Standard path to put RetireWell on the internet with a `*.vercel.app` URL you can share with clients.
+Standard path to put Retire 360 on the internet with a `*.vercel.app` URL you can share with clients.
 
 ### 1. Push to GitHub (already done if you're reading this on GitHub)
 The repo at github.com/&lt;your-username&gt;/retirewell is the source of truth. Every push to `main` auto-deploys.

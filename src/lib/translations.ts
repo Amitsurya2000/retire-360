@@ -128,7 +128,7 @@ const en: Strings = {
   pickLanguageTitle: "Namaste! 🙏",
   pickLanguageSubtitle: "Which language is most comfortable for you?\nWe'll continue the whole conversation in that language.",
 
-  greetingForName: "I'm your RetireWell guide. In a few easy taps, we'll build your retirement plan together.\n\nWhat should I call you?",
+  greetingForName: "I'm your Retire 360 guide. In a few easy taps, we'll build your retirement plan together.\n\nWhat should I call you?",
   nameInputPlaceholder: "Type your name…",
   ageQuestion: (n) => `${n ? `Lovely to meet you, ${n}! ` : "Lovely! "}How old are you?`,
   ageSuffix: "years old",
@@ -204,7 +204,7 @@ const hi: Strings = {
   pickLanguageTitle: "नमस्ते! 🙏",
   pickLanguageSubtitle: "आपको कौन सी भाषा सबसे आरामदायक लगती है?\nहम पूरी बातचीत उसी भाषा में करेंगे।",
 
-  greetingForName: "मैं आपका RetireWell गाइड हूँ। कुछ आसान टैप में, हम मिलकर आपकी रिटायरमेंट योजना बनाएंगे।\n\nमैं आपको क्या कहकर बुलाऊं?",
+  greetingForName: "मैं आपका Retire 360 गाइड हूँ। कुछ आसान टैप में, हम मिलकर आपकी रिटायरमेंट योजना बनाएंगे।\n\nमैं आपको क्या कहकर बुलाऊं?",
   nameInputPlaceholder: "अपना नाम लिखें…",
   ageQuestion: (n) => `${n ? `आपसे मिलकर खुशी हुई, ${n}! ` : "बहुत अच्छा! "}आपकी उम्र क्या है?`,
   ageSuffix: "साल",
@@ -280,7 +280,7 @@ const hng: Strings = {
   pickLanguageTitle: "Namaste! 🙏",
   pickLanguageSubtitle: "Aapko kaun si bhasha sabse comfortable lagti hai?\nHum poori baatcheet usi bhasha mein karenge.",
 
-  greetingForName: "Main aapka RetireWell guide hun. Kuch aasaan taps mein, hum milkar aapki retirement plan banayenge.\n\nMain aapko kya kehkar bulaun?",
+  greetingForName: "Main aapka Retire 360 guide hun. Kuch aasaan taps mein, hum milkar aapki retirement plan banayenge.\n\nMain aapko kya kehkar bulaun?",
   nameInputPlaceholder: "Apna naam likhein…",
   ageQuestion: (n) => `${n ? `Aapse milkar khushi hui, ${n}! ` : "Bahut accha! "}Aapki umar kya hai?`,
   ageSuffix: "saal",
@@ -356,7 +356,7 @@ const ta: Strings = {
   pickLanguageTitle: "வணக்கம்! 🙏",
   pickLanguageSubtitle: "உங்களுக்கு எந்த மொழி வசதியாக இருக்கும்?\nநாங்கள் முழு உரையாடலையும் அந்த மொழியில் தொடர்வோம்.",
 
-  greetingForName: "நான் உங்கள் RetireWell வழிகாட்டி. சில எளிய டாப்களில், நாங்கள் ஒன்றாக உங்கள் ஓய்வூதியத் திட்டத்தை உருவாக்குவோம்.\n\nநான் உங்களை என்ன பெயரில் அழைக்கட்டும்?",
+  greetingForName: "நான் உங்கள் Retire 360 வழிகாட்டி. சில எளிய டாப்களில், நாங்கள் ஒன்றாக உங்கள் ஓய்வூதியத் திட்டத்தை உருவாக்குவோம்.\n\nநான் உங்களை என்ன பெயரில் அழைக்கட்டும்?",
   nameInputPlaceholder: "உங்கள் பெயரை தட்டச்சு செய்யவும்…",
   ageQuestion: (n) => `${n ? `உங்களை சந்தித்ததில் மகிழ்ச்சி, ${n}! ` : "மிக்க மகிழ்ச்சி! "}உங்கள் வயது என்ன?`,
   ageSuffix: "வயது",
@@ -432,7 +432,7 @@ const te: Strings = {
   pickLanguageTitle: "నమస్తే! 🙏",
   pickLanguageSubtitle: "మీకు ఏ భాష చాలా సౌకర్యవంతంగా ఉంటుంది?\nమేము మొత్తం సంభాషణను అదే భాషలో కొనసాగిస్తాము.",
 
-  greetingForName: "నేను మీ RetireWell గైడ్. కొన్ని సులభమైన ట్యాప్‌లలో, మనం కలిసి మీ రిటైర్‌మెంట్ ప్లాన్‌ను తయారు చేస్తాము.\n\nమీని ఏం పిలవాలి?",
+  greetingForName: "నేను మీ Retire 360 గైడ్. కొన్ని సులభమైన ట్యాప్‌లలో, మనం కలిసి మీ రిటైర్‌మెంట్ ప్లాన్‌ను తయారు చేస్తాము.\n\nమీని ఏం పిలవాలి?",
   nameInputPlaceholder: "మీ పేరు టైప్ చేయండి…",
   ageQuestion: (n) => `${n ? `మిమ్మల్ని కలవడం సంతోషం, ${n}! ` : "చాలా బాగుంది! "}మీ వయసు ఎంత?`,
   ageSuffix: "ఏళ్ళు",
@@ -508,7 +508,7 @@ const mr: Strings = {
   pickLanguageTitle: "नमस्ते! 🙏",
   pickLanguageSubtitle: "तुम्हाला कोणती भाषा सर्वात सोयीस्कर वाटते?\nआम्ही संपूर्ण संभाषण त्याच भाषेत चालू ठेवू.",
 
-  greetingForName: "मी तुमचा RetireWell मार्गदर्शक आहे. काही सोप्या टॅप्समध्ये, आम्ही तुमची निवृत्ती योजना तयार करू.\n\nमी तुम्हाला काय म्हणून बोलावू?",
+  greetingForName: "मी तुमचा Retire 360 मार्गदर्शक आहे. काही सोप्या टॅप्समध्ये, आम्ही तुमची निवृत्ती योजना तयार करू.\n\nमी तुम्हाला काय म्हणून बोलावू?",
   nameInputPlaceholder: "तुमचे नाव लिहा…",
   ageQuestion: (n) => `${n ? `तुम्हाला भेटून आनंद झाला, ${n}! ` : "खूप छान! "}तुमचे वय किती आहे?`,
   ageSuffix: "वर्षे",
@@ -584,7 +584,7 @@ const bn: Strings = {
   pickLanguageTitle: "নমস্কার! 🙏",
   pickLanguageSubtitle: "আপনার কোন ভাষা সবচেয়ে আরামদায়ক?\nআমরা পুরো কথোপকথন সেই ভাষাতেই চালিয়ে যাব।",
 
-  greetingForName: "আমি আপনার RetireWell গাইড। কয়েকটি সহজ ট্যাপে, আমরা একসাথে আপনার অবসর পরিকল্পনা তৈরি করব।\n\nআপনাকে কী নামে ডাকব?",
+  greetingForName: "আমি আপনার Retire 360 গাইড। কয়েকটি সহজ ট্যাপে, আমরা একসাথে আপনার অবসর পরিকল্পনা তৈরি করব।\n\nআপনাকে কী নামে ডাকব?",
   nameInputPlaceholder: "আপনার নাম টাইপ করুন…",
   ageQuestion: (n) => `${n ? `আপনার সাথে দেখা হয়ে আনন্দিত, ${n}! ` : "চমৎকার! "}আপনার বয়স কত?`,
   ageSuffix: "বছর",
@@ -660,7 +660,7 @@ const gu: Strings = {
   pickLanguageTitle: "નમસ્તે! 🙏",
   pickLanguageSubtitle: "તમને કઈ ભાષા સૌથી આરામદાયક લાગે છે?\nઅમે આખી વાતચીત તે જ ભાષામાં ચાલુ રાખીશું.",
 
-  greetingForName: "હું તમારો RetireWell માર્ગદર્શક છું. થોડા સરળ ટૅપ્સમાં, અમે સાથે મળીને તમારી નિવૃત્તિ યોજના બનાવીશું.\n\nહું તમને શું કહીને બોલાવું?",
+  greetingForName: "હું તમારો Retire 360 માર્ગદર્શક છું. થોડા સરળ ટૅપ્સમાં, અમે સાથે મળીને તમારી નિવૃત્તિ યોજના બનાવીશું.\n\nહું તમને શું કહીને બોલાવું?",
   nameInputPlaceholder: "તમારું નામ ટાઇપ કરો…",
   ageQuestion: (n) => `${n ? `તમને મળીને આનંદ થયો, ${n}! ` : "ખૂબ સરસ! "}તમારી ઉંમર શું છે?`,
   ageSuffix: "વર્ષ",

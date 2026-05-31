@@ -57,7 +57,7 @@ function AdvisorPageInner() {
     <div className="max-w-4xl mx-auto px-6 py-6">
       <div className="mb-4">
         <p className="text-sm font-semibold text-primary uppercase tracking-wide">AI Advisor</p>
-        <h1 className="mt-1 text-2xl md:text-3xl font-bold tracking-tight">Talk to RetireWell</h1>
+        <h1 className="mt-1 text-2xl md:text-3xl font-bold tracking-tight">Talk to Retire 360</h1>
         <p className="text-slate-600 text-sm mt-1">
           Your advisor knows your plan. Ask anything about money, taxes, or life in retirement.
         </p>

@@ -324,14 +324,14 @@ export function generatePlan(inputs: PlanInputs): GeneratedPlan {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// "Local Agent" naive baseline — compare against the RetireWell plan.
+// "Local Agent" naive baseline — compare against the Retire 360 plan.
 //
 // Assumptions for the local-agent scenario:
 //   • Entire corpus parked in fixed deposits at 7% (no diversification)
 //   • All income credited to ONE spouse (no name-splitting tax benefit)
 //     → entire FD interest taxed at marginal slab
 //   • No SWP (only FD interest payouts), no liability ring-fencing
-//   • Same monthly withdrawal target as the RetireWell plan
+//   • Same monthly withdrawal target as the Retire 360 plan
 //
 // This represents the typical "park it all in FDs and trust me" advice.
 // ─────────────────────────────────────────────────────────────────────
@@ -435,7 +435,7 @@ export interface ComparisonResult {
 export function compareWithLocalAgent(inputs: PlanInputs, retireWellPlan: GeneratedPlan): ComparisonResult {
   const naive = generateNaivePlan(inputs);
 
-  // For the RetireWell scenario, assume the spouse-split framework is applied:
+  // For the Retire 360 scenario, assume the spouse-split framework is applied:
   // income is split across both spouses so each stays under ₹12L/year → near-zero tax.
   // We use the gross income from the bucket plan but recompute tax as if each spouse
   // receives half (the spouse-split framework's whole point).

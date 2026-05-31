@@ -188,7 +188,7 @@ function PlanPageInner() {
         </div>
       </div>
 
-      {/* THE CLINCHER — RetireWell vs Local Agent comparison */}
+      {/* THE CLINCHER — Retire 360 vs Local Agent comparison */}
       {comparison && <ComparisonPanel comparison={comparison} planYears={plan.projections.length} />}
 
       {/* ─────────────── ENGINE-DRIVEN 3-STAGE ROADMAP ─────────────── */}
@@ -200,7 +200,7 @@ function PlanPageInner() {
               <h2 className="mt-1 text-2xl md:text-3xl font-bold tracking-tight">Your specialist plan, calculated to the rupee</h2>
             </div>
             <span className="text-xs text-slate-500 bg-slate-100 rounded-full px-3 py-1">
-              🔒 Calculated by RetireWell engine — Excel-verified
+              🔒 Calculated by Retire 360 engine — Excel-verified
             </span>
           </div>
           <EngineRoadmap client={engineClient} plan={enginePlan} />
@@ -427,12 +427,12 @@ function ComparisonPanel({ comparison, planYears }: { comparison: ComparisonResu
           </div>
         </div>
 
-        {/* RetireWell side */}
+        {/* Retire 360 side */}
         <div className="rounded-2xl bg-white border-2 border-primary overflow-hidden shadow-md">
           <div className="bg-primary-light px-5 py-3 border-b border-primary">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-primary" />
-              <h3 className="font-bold text-slate-900">RetireWell Plan (3-stage, spouse-split, SWP)</h3>
+              <h3 className="font-bold text-slate-900">Retire 360 Plan (3-stage, spouse-split, SWP)</h3>
             </div>
           </div>
           <div className="p-5 space-y-3">
@@ -465,7 +465,7 @@ function ComparisonPanel({ comparison, planYears }: { comparison: ComparisonResu
 
       {extraYears > 0 && (
         <p className="text-center text-slate-700 text-sm mt-4">
-          <strong>Plus:</strong> Your corpus lasts <strong className="text-primary">{extraYears} more year{extraYears === 1 ? "" : "s"}</strong> with the RetireWell plan.
+          <strong>Plus:</strong> Your corpus lasts <strong className="text-primary">{extraYears} more year{extraYears === 1 ? "" : "s"}</strong> with the Retire 360 plan.
         </p>
       )}
 

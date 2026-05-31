@@ -181,7 +181,7 @@ export function AdvisorChat({ profileId, userName }: Props) {
               <MessageCircle className="w-5 h-5" />
             </div>
             <a
-              href={whatsappLink("I've been chatting with the RetireWell advisor and would like to talk to a wealth manager.")}
+              href={whatsappLink("I've been chatting with the Retire 360 advisor and would like to talk to a wealth manager.")}
               target="_blank"
               rel="noopener noreferrer"
               className="max-w-[80%] bg-emerald-50 border-2 border-emerald-200 hover:bg-emerald-100 rounded-2xl px-5 py-3 transition-colors group"

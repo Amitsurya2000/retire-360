@@ -19,7 +19,7 @@ export function WealthManagerCTA({
   subline,
 }: Props) {
   const prefill = context
-    ? `Hello! I'm using the RetireWell app — ${context}. Could you guide me?`
+    ? `Hello! I'm using the Retire 360 app — ${context}. Could you guide me?`
     : undefined;
   const href = whatsappLink(prefill);
 

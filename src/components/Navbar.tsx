@@ -40,7 +40,7 @@ export function Navbar() {
           <span className="inline-flex items-center justify-center w-9 h-9 bg-primary text-white rounded-xl">
             <Sparkles className="w-5 h-5" />
           </span>
-          <span className="font-bold text-xl tracking-tight">RetireWell</span>
+          <span className="font-bold text-xl tracking-tight">Retire 360</span>
         </Link>
 
         {/* Desktop nav */}

@@ -1,5 +1,5 @@
 /**
- * Map a saved RetireWell profile (Prisma `UserProfile`) into a `Client`
+ * Map a saved Retire 360 profile (Prisma `UserProfile`) into a `Client`
  * input for the deterministic retirement engine.
  *
  * The current chat onboarding doesn't yet collect every engine field
