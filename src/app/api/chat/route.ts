@@ -14,6 +14,7 @@ import { profileToClient } from "@/lib/profile-to-engine";
 
 export const runtime = "nodejs";
 export const maxDuration = 300; // Allow long structured responses (tables + multi-stage plans) to stream fully.
+// Deploy trigger: romanized-language + 503-retry fixes (v2).
 
 // Detect the dominant script of a text and return a Gemini-friendly instruction
 // telling the model exactly which language to reply in.
