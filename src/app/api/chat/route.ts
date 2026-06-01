@@ -38,13 +38,25 @@ function detectLanguageInstruction(text: string): string {
     if (r.instruction && r.regex.test(trimmed)) return r.instruction;
   }
 
-  // No Indic script detected → Latin alphabet. Distinguish English from Hinglish.
+  // No Indic script detected → Latin alphabet. This is EITHER English OR a
+  // romanized Indian language (Telugu/Tamil/Hindi/etc. typed in Roman letters).
+
+  // Strong, explicit signal for romanized Hindi (Hinglish).
   const hinglishMarkers = /\b(mera|tera|aap|hum|ham|kya|kaise|nahi|nahin|hain?|tha|thi|ke|ka|ki|ko|se|mein|main|toh|to|bhi|jo|woh|wo|yeh|ye|chahiye|paisa|hindi|matlab|samjh|samajh|batao|dikhao|dikh|bata)\b/i;
   if (hinglishMarkers.test(trimmed)) {
     return "The user wrote in Hinglish (Roman-script Hindi). Reply in Hinglish — mix Hindi words written in Roman/Latin letters with English where natural. Do NOT use Devanagari script.";
   }
 
-  return "The user wrote in English. Reply ENTIRELY in English. Do NOT use Hindi, Devanagari, or any other script. Even though the topic is Indian retirement, your reply MUST be in English because the user wrote in English. This is non-negotiable.";
+  // Romanized Telugu markers (Telugu typed in Roman/Latin letters).
+  const romanTeluguMarkers = /\b(nenu|naaku|naku|niku|neeku|nuvvu|meeru|miru|enti|emiti|emi|em|indi|idi|adi|ela|ila|ledu|lev|ledhu|kaavali|kavali|cheppu|cheppandi|chey|chesi|chestha|ista|istha|ardham|ardam|artham|telusu|teliyadu|baagundi|bagunnara|dabbu|pani|kaani|kani|vundi|unna|undi|plan)\b/i;
+  if (romanTeluguMarkers.test(trimmed)) {
+    return "The user wrote in romanized Telugu (Telugu in Roman/Latin letters). Reply in Telugu written in Roman/Latin letters (transliterated — NOT Telugu script), the same way the user typed, mixing English financial terms where natural. Do NOT reply in English or Hindi.";
+  }
+
+  // Unknown Latin-script input → let the model identify the language and match it.
+  // The model is reliable at detecting romanized Indian languages; only force
+  // English when the text is plainly standard English.
+  return "The user wrote using the Latin/Roman alphabet. This is EITHER English OR a romanized Indian language (e.g. Telugu, Tamil, Kannada, Malayalam, Marathi, Bengali, Gujarati, Punjabi written in Roman letters). Carefully identify which language the user ACTUALLY wrote in, then reply in THAT SAME language using the SAME Roman/Latin script the user used (do not switch to a native script). ONLY if the message is plainly standard English words should you reply in English.";
 }
 
 interface ChatMessage {
