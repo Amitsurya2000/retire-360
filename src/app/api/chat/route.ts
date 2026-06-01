@@ -137,32 +137,75 @@ export async function POST(req: NextRequest) {
     parts: [{ text: m.content }],
   }));
 
+  // Models to try in order. If the primary is overloaded (503), we retry it once,
+  // then fall back to a lighter model. This keeps Google's transient "high demand"
+  // errors mostly invisible to the user.
+  const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash", "gemini-2.0-flash"];
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+  const isOverloaded = (err: unknown): boolean => {
+    const s = (err instanceof Error ? err.message : String(err)).toLowerCase();
+    return (
+      s.includes("503") ||
+      s.includes("unavailable") ||
+      s.includes("overloaded") ||
+      s.includes("high demand") ||
+      s.includes("429") ||
+      s.includes("resource_exhausted") ||
+      s.includes("rate limit")
+    );
+  };
+
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
-      try {
-        const response = await ai.models.generateContentStream({
-          model: "gemini-2.5-flash",
-          contents,
-          config: {
-            systemInstruction,
-            temperature: 0.7,
-            maxOutputTokens: 2048,
-          },
-        });
+      let enqueuedAny = false;
 
-        for await (const chunk of response) {
-          const text = chunk.text;
-          if (text) {
-            controller.enqueue(encoder.encode(text));
+      for (let attempt = 0; attempt < MODELS.length; attempt++) {
+        const model = MODELS[attempt];
+        try {
+          const response = await ai.models.generateContentStream({
+            model,
+            contents,
+            config: {
+              systemInstruction,
+              temperature: 0.7,
+              maxOutputTokens: 2048,
+            },
+          });
+
+          for await (const chunk of response) {
+            const text = chunk.text;
+            if (text) {
+              enqueuedAny = true;
+              controller.enqueue(encoder.encode(text));
+            }
           }
+          controller.close();
+          return;
+        } catch (err) {
+          console.error(`[chat] attempt ${attempt + 1}/${MODELS.length} (${model}) failed:`, err);
+
+          // If we already streamed part of a reply, we can't cleanly retry — bail gracefully.
+          if (enqueuedAny) {
+            controller.enqueue(encoder.encode("\n\n⚠️ The reply was interrupted. Please try again."));
+            controller.close();
+            return;
+          }
+
+          // Transient overload and we still have attempts left → wait and retry/fall back.
+          if (isOverloaded(err) && attempt < MODELS.length - 1) {
+            await sleep(1000 * (attempt + 1));
+            continue;
+          }
+
+          // Out of attempts (or a non-retryable error) → friendly message, no raw JSON.
+          const friendly = isOverloaded(err)
+            ? "⚠️ The AI is very busy right now (Google's servers are overloaded). Please wait a minute and send your message again."
+            : "⚠️ Sorry, something went wrong generating a reply. Please try again.";
+          controller.enqueue(encoder.encode(friendly));
+          controller.close();
+          return;
         }
-        controller.close();
-      } catch (err) {
-        console.error("[chat] Gemini stream error:", err);
-        const msg = err instanceof Error ? `[Error: ${err.message}]` : "[Error: something went wrong]";
-        controller.enqueue(encoder.encode(`\n\n${msg}`));
-        controller.close();
       }
     },
   });
